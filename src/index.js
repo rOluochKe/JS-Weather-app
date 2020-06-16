@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 const form = document.querySelector('.top-banner form');
 const input = document.querySelector('.top-banner input');
 const msg = document.querySelector('.top-banner .msg');
@@ -5,7 +6,7 @@ const list = document.querySelector('.ajax-section .cities');
 
 const apiKey = 'b9d786489eff73f5cec702d51ff7bba6';
 
-form.addEventListener('submit', e => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
   let inputVal = input.value;
 
@@ -13,7 +14,7 @@ form.addEventListener('submit', e => {
   const listItemsArray = Array.from(listItems);
 
   if (listItemsArray.length > 0) {
-    const filteredArray = listItemsArray.filter(el => {
+    const filteredArray = listItemsArray.filter((el) => {
       let content = '';
       if (inputVal.includes(',')) {
         if (inputVal.split(',')[1].length > 2) {
@@ -22,14 +23,12 @@ form.addEventListener('submit', e => {
             .querySelector('.city-name span')
             .textContent.toLowerCase();
         } else {
-          content = el.querySelector('.city-name')
-            .dataset.name.toLowerCase();
+          content = el.querySelector('.city-name').dataset.name.toLowerCase();
         }
       } else {
-        content = el.querySelector('.city-name span')
-          .textContent.toLowerCase();
+        content = el.querySelector('.city-name span').textContent.toLowerCase();
       }
-      return content == inputVal.toLowerCase();
+      return content === inputVal.toLowerCase();
     });
 
     if (filteredArray.length > 0) {
@@ -45,17 +44,12 @@ form.addEventListener('submit', e => {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${apiKey}&units=metric`;
 
   fetch(url)
-    .then(response => response.json())
-    .then(data => {
+    .then((response) => response.json())
+    .then((data) => {
       const {
-        main,
-        name,
-        sys,
-        weather,
+        main, name, sys, weather,
       } = data;
-      const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${
-        weather[0].icon
-      }.svg`;
+      const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0].icon}.svg`;
 
       const li = document.createElement('li');
       li.classList.add('city');
@@ -66,9 +60,7 @@ form.addEventListener('submit', e => {
         </h2>
         <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
         <figure>
-          <img class="city-icon" src="${icon}" alt="${
-  weather[0].description
-}">
+          <img class="city-icon" src="${icon}" alt="${weather[0].description}">
           <figcaption>${weather[0].description}</figcaption>
         </figure>
       `;
