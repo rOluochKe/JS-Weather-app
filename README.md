@@ -1,6 +1,6 @@
 # WJS-Weather-app
 
-![sample](src/assets/images/readme.png)
+![sample](dist/img/weather.png)
 
 ## # JS-Weather-app [Live Link]()
 
@@ -32,6 +32,7 @@ cd JS-Weather-app
 - Vanilla Javascript
 - Fetch, async, await
 - Consuming api from weather api
+- Form validation
 - Bootstrap user friendly interface
 
 ## Designed and developed by
