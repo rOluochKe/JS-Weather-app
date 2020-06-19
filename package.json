@@ -23,6 +23,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
+    "test": "npx eslint ./src/ --fix",
     "build": "webpack --mode production",
     "watch": "webpack --w --mode development",
     "start": "webpack-dev-server --mode development --open"
