@@ -16,7 +16,7 @@ const fetchData = (inputVal) => {
 
       const newTemp = main.temp;
 
-      const getFahrenheit = () => `${Math.round(newTemp * (9 / 5) + 32)}`;
+      const getFahrenheit = () => `${Math.round((newTemp * 1.8) + 32)}`;
 
       renderResult(main, name, sys, weather, icon, newTemp, getFahrenheit());
     })
