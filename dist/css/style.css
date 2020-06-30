@@ -172,6 +172,14 @@ body {
   height: 100px;
 }
 
+.toggle-me {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background: #87ceeb;
+  padding: 5px;
+}
+
 @media screen and (max-width: 1000px) {
   body {
     padding: 30px;
@@ -209,6 +217,14 @@ body {
   .ajax-section .cities {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
 }
 
 @media screen and (max-width: 500px) {

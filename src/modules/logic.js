@@ -14,7 +14,11 @@ const fetchData = (inputVal) => {
       } = data;
       const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0].icon}.svg`;
 
-      renderResult(main, name, sys, weather, icon);
+      const newTemp = main.temp;
+
+      const getFahrenheit = () => `${Math.round(newTemp * (9 / 5) + 32)}`;
+
+      renderResult(main, name, sys, weather, icon, newTemp, getFahrenheit());
     })
     .catch(() => {
       msg.textContent = 'Please search for a valid city 😩';
