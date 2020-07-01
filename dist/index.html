@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>WEATHER APP</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+
+    <section class="top-banner">
+      <div class="container">
+        <h1 class="heading">Weather App</h1>
+        <form>
+          <input type="text" placeholder="Type name of a city" autofocus />
+          <button type="submit">Search</button>
+          <span class="msg"></span>
+        </form>
+      </div>
+    </section>
+
+    <section class="ajax-section">
+      <div class="container">
+        <ul class="cities"></ul>
+      </div>
+    </section>
+
+    <script src="./js/index.bundle.js" async defer></script>
+  </body>
+</html>
